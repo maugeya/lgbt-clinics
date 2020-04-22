@@ -1,0 +1,16 @@
+{
+    "scripts": {
+      "test": "yarn manage test -v 2",
+      "serve": "echo 'Deprecated: Use yarn start instead'",
+      "start": "yarn webserver",
+      "fresh-start": "yarn webserver --build",
+      "webserver": "docker-compose up",
+      "manage": "docker-compose run backend python manage.py",
+      "validate-webpack-stats": "node scripts/aws/validate-webpack-stats",
+      "frontend:install": "cd frontend && yarn install && cd ..",
+      "frontend:start": "cd frontend && yarn start && cd ..",
+      "frontend:build": "cd frontend && yarn build && cd ..",
+      "frontend:test": "cd frontend && yarn test && cd .."
+    }
+  }
+  
