@@ -1,4 +1,5 @@
 from django.db import models
+from location.models import Location
 
 class Clinic(models.Model):
     name = models.CharField(max_length=250)
@@ -9,4 +10,9 @@ class Clinic(models.Model):
     county = models.CharField(max_length=100)
     postcode = models.CharField(max_length=100)
     url = models.URLField(max_length=250)
-
+    location = models.ForeignKey(
+        Location,
+        related_name='location',
+        null=True,
+        on_delete=models.CASCADE,
+    )
