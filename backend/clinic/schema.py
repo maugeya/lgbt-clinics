@@ -10,6 +10,18 @@ from users.schema import UserType
 
 
 class ClinicType(DjangoObjectType):
+    id = graphene.Int()
+    name = graphene.String()
+    clinic_code = graphene.String()
+    address_1 = graphene.String()
+    address_2 = graphene.String()
+    town = graphene.String()
+    county = graphene.String()
+    postcode = graphene.String()
+    url = graphene.String()
+    latitude = graphene.Int()
+    longitude = graphene.Int()
+
     class Meta:
         model = Clinic
 
