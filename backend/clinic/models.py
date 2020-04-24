@@ -1,5 +1,6 @@
 from django.db import models
 from location.models import Location
+from users.models import CustomUser
 
 class Clinic(models.Model):
     name = models.CharField(max_length=250)
@@ -19,3 +20,8 @@ class Clinic(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Like(models.Model):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    clinic = models.ForeignKey('clinic.clinic', related_name='likes', on_delete=models.CASCADE)
