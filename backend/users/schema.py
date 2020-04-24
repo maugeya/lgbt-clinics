@@ -4,6 +4,11 @@ from graphql_auth import mutations
 from users.models import CustomUser
 
 
+class UserType(DjangoObjectType):
+    class Meta:
+        model = CustomUser
+
+
 class AuthMutation(graphene.ObjectType):
     register = mutations.Register.Field()
     verify_account = mutations.VerifyAccount.Field()
