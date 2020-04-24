@@ -4,7 +4,6 @@ from graphql import GraphQLError
 from django.db.models import Q
 
 from .models import Location
-# from graphql_auth.schema import UserType
 
 
 class LocationType(DjangoObjectType):
