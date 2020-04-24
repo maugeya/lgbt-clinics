@@ -3,9 +3,10 @@ from graphene_django import DjangoObjectType
 from graphql import GraphQLError
 from django.db.models import Q
 
-from .models import Clinic
+from .models import Clinic, Like
 from location.schema import LocationType
-# from graphql_auth.schema import UserType
+from users.models import CustomUser
+from users.schema import UserType
 
 
 class ClinicType(DjangoObjectType):
@@ -31,3 +32,34 @@ class Query(graphene.ObjectType):
             )
             return Clinic.objects.filter(filter)
         return Clinic.objects.all()
+
+
+class CreateLike(graphene.Mutation):
+    user = graphene.Field(UserType)
+    clinic = graphene.Field(ClinicType)
+
+    class Arguments:
+        clinic_id = graphene.Int(required=True)
+
+    def mutate(self, info, clinic_id):
+        user = info.context.user
+        if user.is_anonymous:
+            raise GraphQLError('Login to like clinics.')
+
+        clinic = Clinic.objects.get(id=clinic_id)
+        if not clinic:
+            raise GraphQLError('Cannot find a clinic with the given ID')
+        
+        if Like.objects.get(clinic_id=clinic_id, user=user):
+            raise GraphQLError('Clinic already liked by user')
+
+        Like.objects.create(
+            user=user,
+            clinic=clinic
+        )
+
+        return CreateLike(user=user, clinic=clinic)
+
+
+class Mutation(graphene.ObjectType):
+    create_like = CreateLike.Field()
