@@ -5,7 +5,6 @@ from django.db.models import Q
 
 from .models import Clinic, Like
 from location.schema import LocationType
-from users.models import CustomUser
 from users.schema import UserType
 
 
