@@ -1,6 +1,28 @@
-import React from "react";
-import withRoot from "./withRoot";
+import React from "react"
+import withRoot from "./withRoot"
+import { Query } from "react-apollo"
+import { gql } from "apollo-boost"
 
-const Root = () => <div>Root</div>;
+const Root = () => (
+    <Query query={GET_CLINICS_QUERY}>
+        {({ data, loading, error }) => {
+            if (loading) return <div>Loading</div>
+            if (error) return <div>Error</div>
 
-export default withRoot(Root);
+        return <div>{JSON.stringify(data)}</div>
+        }}
+    </Query>
+)
+
+const GET_CLINICS_QUERY = gql`
+    {
+        clinics {
+            id
+            name
+            clinicCode
+            url
+        }
+    }
+`
+
+export default withRoot(Root)
