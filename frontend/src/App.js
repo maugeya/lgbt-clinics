@@ -1,13 +1,6 @@
-import React from 'react';
-import axios from 'axios';
-import './App.css';
+import React from "react";
+import withRoot from "./withRoot";
 
-function App() {
-  return (
-    <div className="App">
-      HELLO WORLD
-    </div>
-  );
-}
+const Root = () => <div>Root</div>;
 
-export default App;
+export default withRoot(Root);
