@@ -17,7 +17,7 @@ import Slide from "@material-ui/core/Slide";
 import Gavel from "@material-ui/icons/Gavel";
 import VerifiedUserTwoTone from "@material-ui/icons/VerifiedUserTwoTone";
 import Error from "../Shared/Error"
-import { REGISTER_MUTATION } from "../../lib/graphQL"
+import { REGISTER_MUTATION } from "../../library/graphQL"
 
 function Transition(props) {
   return <Slide direction="up" {...props}/>
