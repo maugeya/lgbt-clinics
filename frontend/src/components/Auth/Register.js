@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Mutation } from "react-apollo";
-import { gql } from "apollo-boost";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
@@ -17,6 +16,8 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import Slide from "@material-ui/core/Slide";
 import Gavel from "@material-ui/icons/Gavel";
 import VerifiedUserTwoTone from "@material-ui/icons/VerifiedUserTwoTone";
+import Error from "../Shared/Error"
+import { REGISTER_MUTATION } from "../../lib/graphQL"
 
 function Transition(props) {
   return <Slide direction="up" {...props}/>
@@ -83,7 +84,7 @@ const Register = ({ classes, setNewUser }) => {
                 >
                   Previous user? Login here
                 </Button>
-                {error && <div>Error</div>}
+                {error && <Error error={error}/>}
               </form>
             )
           }}
@@ -115,18 +116,6 @@ const Register = ({ classes, setNewUser }) => {
     </div>
   );
 };
-
-const REGISTER_MUTATION = gql`
-  mutation ($username: String!, $email: String!, $password: String!) {
-    createUser(username:$username, email:$email, password:$password) {
-      user {
-        id
-        username
-        email
-      }
-    }
-  }
-`
 
 const styles = theme => ({
   root: {
