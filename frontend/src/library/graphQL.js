@@ -25,3 +25,31 @@ export const IS_LOGGED_IN = gql`
     isLoggedIn @client
   }
 `;
+
+export const GET_CLINICS_QUERY = gql`
+  query getClinicsQuery{
+    clinics {
+      id
+      name
+      clinicCode
+      address1
+      address2
+      town
+      county
+      postcode
+      url
+      likes {
+        id
+      }
+    }
+  }
+`;
+
+export const ME_QUERY = gql`
+  {
+    me {
+      id
+      username
+    } 
+  }
+`;
