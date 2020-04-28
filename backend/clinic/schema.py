@@ -8,6 +8,11 @@ from location.schema import LocationType
 from users.schema import UserType
 
 
+class LikeType(DjangoObjectType):
+    class Meta:
+        model = Like
+
+
 class ClinicType(DjangoObjectType):
     id = graphene.Int()
     name = graphene.String()
@@ -28,6 +33,7 @@ class ClinicType(DjangoObjectType):
 class Query(graphene.ObjectType):
     clinics = graphene.List(ClinicType, search=graphene.String())
     locations = graphene.List(LocationType)
+    likes = graphene.List(LikeType)
 
     def resolve_clinics(self, info, search=None):
         if search:
