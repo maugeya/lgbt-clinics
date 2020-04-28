@@ -10,7 +10,7 @@ export const REGISTER_MUTATION = gql`
       }
     }
   }
-`
+`;
 
 export const LOGIN_MUTATION = gql`
   mutation($username: String!, $password: String!) {
@@ -18,4 +18,10 @@ export const LOGIN_MUTATION = gql`
       token
     }
   }
-`
+`;
+
+export const IS_LOGGED_IN = gql`
+  query {
+    isLoggedIn @client
+  }
+`;
