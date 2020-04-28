@@ -8,8 +8,8 @@ import Register from "./Register"
 export default withRoot(() => {
   const [newUser, setNewUser] = useState(true)
   return  newUser ? (
-    <Register setNewUser={setNewUser}/>
+    <Register setNewUser={setNewUser} />
   ) : (
-    <Login />
+    <Login setNewUser={setNewUser} />
   )
 });
