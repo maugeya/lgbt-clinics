@@ -46,10 +46,35 @@ export const GET_CLINICS_QUERY = gql`
 `;
 
 export const ME_QUERY = gql`
-  {
-    me {
+{
+  me {
+    id
+    username
+    email
+    likeSet {
+      clinic {
+        id
+      }
+    }
+  }
+}
+`;
+
+export const SEARCH_CLINICS_QUERY = gql`
+  query($search: String) {
+    clinics(search: $search) {
       id
-      username
-    } 
+      name
+      clinicCode
+      address1
+      address2
+      town
+      county
+      postcode
+      url
+      likes {
+        id
+      }
+    }
   }
 `;
