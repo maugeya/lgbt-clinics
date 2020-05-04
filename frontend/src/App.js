@@ -10,17 +10,19 @@ import Header from "./components/Shared/Header";
 import Loading from "./components/Shared/Loading";
 import Error from "./components/Shared/Error";
 
-const Root = () => (
+const App = () => (
     <Query query={ME_QUERY}>
-        {({ data, loading, error }) => {
+        {({ data, loading, error }) => {         
             if (loading) return <Loading />
-            if (error) return <Error error={error} />
+            if (error) {
+                localStorage.removeItem('authToken')
+                return <Error error={error} />}
             const currentUser = data.me
 
         return (
             <Router>
                 <>
-                    <Header currentUser={currentUser}/>
+                    <Header currentUser={currentUser} />
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route path="/clinics" component={ClinicsRoute} />
@@ -33,4 +35,4 @@ const Root = () => (
     </Query>
 )
 
-export default withRoot(Root)
+export default withRoot(App)
