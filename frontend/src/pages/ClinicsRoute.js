@@ -1,12 +1,12 @@
 
-import React, { useState } from "react";
-import { Query } from "react-apollo";
-import withStyles from "@material-ui/core/styles/withStyles";
+import React, { useState } from "react"
+import { Query } from "react-apollo"
+import withStyles from "@material-ui/core/styles/withStyles"
 import SearchClinics from "../components/Clinic/SearchClinic"
 import ClinicList from "../components/Clinic/ClinicList"
-import { GET_CLINICS_QUERY } from "../library/graphQL";
-import Loading from "../components/Shared/Loading";
-import Error from "../components/Shared/Error";
+import { GET_CLINICS_QUERY } from "../library/graphQL"
+import Loading from "../components/Shared/Loading"
+import Error from "../components/Shared/Error"
 
 const ClinicsRoute = ({ classes }) => {
   const [searchResults, setSearchResults] = useState([])
@@ -25,8 +25,8 @@ const ClinicsRoute = ({ classes }) => {
             }}
           </Query>
       </div>
-  );
-};
+  )
+}
 
 const styles = theme => ({
   container: {
@@ -34,6 +34,6 @@ const styles = theme => ({
     maxWidth: 960,
     padding: theme.spacing.unit * 2
   }
-});
+})
 
-export default withStyles(styles)(ClinicsRoute);
+export default withStyles(styles)(ClinicsRoute)

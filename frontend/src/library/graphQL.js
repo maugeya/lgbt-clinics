@@ -1,4 +1,4 @@
-import { gql } from "apollo-boost";
+import { gql } from "apollo-boost"
 
 export const REGISTER_MUTATION = gql`
   mutation ($username: String!, $email: String!, $password: String!) {
@@ -10,7 +10,7 @@ export const REGISTER_MUTATION = gql`
       }
     }
   }
-`;
+`
 
 export const LOGIN_MUTATION = gql`
   mutation($username: String!, $password: String!) {
@@ -18,13 +18,13 @@ export const LOGIN_MUTATION = gql`
       token
     }
   }
-`;
+`
 
 export const IS_LOGGED_IN = gql`
   query {
     isLoggedIn @client
   }
-`;
+`
 
 export const GET_CLINICS_QUERY = gql`
   query getClinicsQuery{
@@ -43,7 +43,7 @@ export const GET_CLINICS_QUERY = gql`
       }
     }
   }
-`;
+`
 
 export const ME_QUERY = gql`
 {
@@ -58,7 +58,7 @@ export const ME_QUERY = gql`
     }
   }
 }
-`;
+`
 
 export const SEARCH_CLINICS_QUERY = gql`
   query($search: String) {
@@ -77,4 +77,4 @@ export const SEARCH_CLINICS_QUERY = gql`
       }
     }
   }
-`;
+`

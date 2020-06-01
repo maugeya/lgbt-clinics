@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { Mutation } from "react-apollo";
-import withStyles from "@material-ui/core/styles/withStyles";
-import Typography from "@material-ui/core/Typography";
-import Avatar from "@material-ui/core/Avatar";
-import FormControl from "@material-ui/core/FormControl";
-import Paper from "@material-ui/core/Paper";
-import Input from "@material-ui/core/Input";
-import InputLabel from "@material-ui/core/InputLabel";
-import Button from "@material-ui/core/Button";
-import Lock from "@material-ui/icons/Lock";
+import React, { useState } from "react"
+import { Mutation } from "react-apollo"
+import withStyles from "@material-ui/core/styles/withStyles"
+import Typography from "@material-ui/core/Typography"
+import Avatar from "@material-ui/core/Avatar"
+import FormControl from "@material-ui/core/FormControl"
+import Paper from "@material-ui/core/Paper"
+import Input from "@material-ui/core/Input"
+import InputLabel from "@material-ui/core/InputLabel"
+import Button from "@material-ui/core/Button"
+import Lock from "@material-ui/icons/Lock"
 import { LOGIN_MUTATION } from "../../library/graphQL"
 import Error from "../Shared/Error"
 
@@ -72,8 +72,8 @@ const Login = ({ classes, setNewUser }) => {
         </Mutation>
       </Paper>
     </div>
-  );
-};
+  )
+}
 
 const styles = theme => ({
   root: {
@@ -110,6 +110,6 @@ const styles = theme => ({
     marginTop: theme.spacing.unit * 2,
     marginBottom: theme.spacing.unit * 2
   }
-});
+})
 
-export default withStyles(styles)(Login);
+export default withStyles(styles)(Login)

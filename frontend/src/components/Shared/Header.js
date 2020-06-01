@@ -1,11 +1,11 @@
-import React from "react";
-import withStyles from "@material-ui/core/styles/withStyles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import ChildFriendly from "@material-ui/icons/ChildFriendly";
-import FaceIcon from "@material-ui/icons/FaceTwoTone";
-import Typography from "@material-ui/core/Typography";
-import { Link } from "react-router-dom";
+import React from "react"
+import withStyles from "@material-ui/core/styles/withStyles"
+import AppBar from "@material-ui/core/AppBar"
+import Toolbar from "@material-ui/core/Toolbar"
+import ChildFriendly from "@material-ui/icons/ChildFriendly"
+import FaceIcon from "@material-ui/icons/FaceTwoTone"
+import Typography from "@material-ui/core/Typography"
+import { Link } from "react-router-dom"
 import Signout from "../Auth/Signout"
 
 const Header = ({ classes, currentUser }) => {
@@ -32,8 +32,8 @@ const Header = ({ classes, currentUser }) => {
         <Signout />
       </Toolbar>
     </AppBar>
-  );
-};
+  )
+}
 
 const styles = theme => ({
   root: {
@@ -60,6 +60,6 @@ const styles = theme => ({
     color: "white",
     fontSize: 30
   }
-});
+})
 
-export default withStyles(styles)(Header);
+export default withStyles(styles)(Header)

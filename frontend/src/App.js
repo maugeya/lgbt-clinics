@@ -1,14 +1,14 @@
-import React from "react";
-import withRoot from "./withRoot";
-import { Query } from "react-apollo";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { ME_QUERY, GET_CLINICS_QUERY } from "./library/graphQL";
-import Home from "./pages/Home";
-import ClinicsRoute from "./pages/ClinicsRoute";
-import Profile from "./pages/Profile";
-import Header from "./components/Shared/Header";
-import Loading from "./components/Shared/Loading";
-import Error from "./components/Shared/Error";
+import React from "react"
+import withRoot from "./withRoot"
+import { Query } from "react-apollo"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { ME_QUERY, GET_CLINICS_QUERY } from "./library/graphQL"
+import Home from "./pages/Home"
+import ClinicsRoute from "./pages/ClinicsRoute"
+import Profile from "./pages/Profile"
+import Header from "./components/Shared/Header"
+import Loading from "./components/Shared/Loading"
+import Error from "./components/Shared/Error"
 
 const App = () => (
     <Query query={ME_QUERY}>

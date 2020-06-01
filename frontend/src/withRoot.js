@@ -1,8 +1,8 @@
-import React from "react";
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import indigo from "@material-ui/core/colors/indigo";
-import orange from "@material-ui/core/colors/orange";
-import CssBaseline from "@material-ui/core/CssBaseline";
+import React from "react"
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles"
+import indigo from "@material-ui/core/colors/indigo"
+import orange from "@material-ui/core/colors/orange"
+import CssBaseline from "@material-ui/core/CssBaseline"
 
 const theme = createMuiTheme({
   palette: {
@@ -20,7 +20,7 @@ const theme = createMuiTheme({
   typography: {
     useNextVariants: true
   }
-});
+})
 
 function withRoot(Component) {
   function WithRoot(props) {
@@ -29,10 +29,10 @@ function withRoot(Component) {
         <CssBaseline />
         <Component {...props} />
       </MuiThemeProvider>
-    );
+    )
   }
 
-  return WithRoot;
+  return WithRoot
 }
 
-export default withRoot;
+export default withRoot
